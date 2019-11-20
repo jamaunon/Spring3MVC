@@ -49,6 +49,7 @@ pipeline {
                 success {
                         echo "Info: Desplegando en PYF"
 			deploy adapters: [tomcat8(credentialsId: '3bacd257-77e0-4fb3-84c2-abf086d339d4', path: '', url: 'http://localhost:8082/')], contextPath: null, war: '**/*.war'
+			sleep 10
                         echo "Info: Desplegando en PRO"
 			deploy adapters: [tomcat8(credentialsId: '3bacd257-77e0-4fb3-84c2-abf086d339d4', path: '', url: 'http://localhost:8081/')], contextPath: null, war: '**/*.war'
                 	}   
