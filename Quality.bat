@@ -1,1 +1,1 @@
-bat 'mvn pwd:pwd checkstyle:checkstyle'
+mvn pwd:pwd checkstyle:checkstyle
