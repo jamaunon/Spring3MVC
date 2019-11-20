@@ -6,7 +6,7 @@ pipeline {
         jdk 'LocalJDK8'
     }
     triggers { 
-	  pollSCM('* * * * 1-5') 
+	  pollSCM('* * * * *') 
     }
     stages {
 	stage('Build') {
