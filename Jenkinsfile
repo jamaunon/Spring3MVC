@@ -27,7 +27,7 @@ pipeline {
 	}    
         stage('Info-deploy') {
             parallel {
-                stage('Test On Windows') {
+                stage('Info') {
 /*                   agent {
                         label "mock"
                     }
