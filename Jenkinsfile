@@ -26,7 +26,7 @@ pipeline {
   */    steps {
                 echo 'Descarga del repositorio y hacer clean and package'
 	 	bat "Quality.bat"
-	  	checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: '', unstableTotalAll: '4'
+	  	checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: '', unstableTotalAll: '6'
         }
 	}    
         stage('Info-deploy') {
