@@ -1,12 +1,12 @@
 pipeline {
     //agent none
     agent any
+    triggers { 
+	  pollSCM('* * * * *') 
+    }
     tools {
         maven 'localmaven' 
         jdk 'LocalJDK8'
-    }
-    triggers { 
-	  pollSCM('* * * * *') 
     }
     stages {
 	stage('Build') {
