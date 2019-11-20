@@ -4,7 +4,8 @@ pipeline {
     tools {
         maven 'localmaven' 
         jdk 'LocalJDK8'
-    }	    
+    }
+    triggers { pollSCM('* * * * 1-5') }
     stages {
 	stage('Build') {
 /*	    agent {
