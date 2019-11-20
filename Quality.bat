@@ -1,1 +1,1 @@
-mvn pwd:pwd checkstyle:checkstyle
+mvn clean pmd:pmd checkstyle:checkstyle findbugs:findbugs
