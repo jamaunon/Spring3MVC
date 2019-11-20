@@ -26,7 +26,7 @@ pipeline {
   */    steps {
                 echo 'Descarga del repositorio y hacer clean and package'
 	 	bat "Quality.bat"
-	  	checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: '', unstableTotalAll: '6'
+	  	checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: '', unstableTotalAll: '5'
         }
 	}    
         stage('Info-deploy') {
@@ -47,10 +47,10 @@ pipeline {
                         echo "Info: Desplegando en PYF"
                 	}   
                 success {
-			deploy adapters: [tomcat8(credentialsId: '3bacd257-77e0-4fb3-84c2-abf086d339d4', path: '', url: 'http://localhost:8081/')], contextPath: null, war: '**/*.war'
-			deploy adapters: [tomcat8(credentialsId: '3bacd257-77e0-4fb3-84c2-abf086d339d4', path: '', url: 'http://localhost:8082/')], contextPath: null, war: '**/*.war'
                         echo "Info: Desplegando en PYF"
+			deploy adapters: [tomcat8(credentialsId: '3bacd257-77e0-4fb3-84c2-abf086d339d4', path: '', url: 'http://localhost:8082/')], contextPath: null, war: '**/*.war'
                         echo "Info: Desplegando en PRO"
+			deploy adapters: [tomcat8(credentialsId: '3bacd257-77e0-4fb3-84c2-abf086d339d4', path: '', url: 'http://localhost:8081/')], contextPath: null, war: '**/*.war'
                 	}   
                 }
             }
