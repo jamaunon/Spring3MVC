@@ -12,7 +12,7 @@ pipeline {
                 }
  */       steps {
                 echo 'Descarga del repositorio y hacer clean and package'
-	 	git 'https://github.com/jamaunon/curso_integracion_continua.git'
+	 	git 'https://github.com/jamaunon/Spring3MVC.git'
 	 	bat "miMaven.bat"
                 }
         }
