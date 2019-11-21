@@ -26,10 +26,11 @@ pipeline {
         }
       steps {
                 echo 'Ejecutando Sonar'
-		withSonarQubeEnv(credentialsId: '97315392-7119-4668-85aa-f0060271ce52') {
+/*		withSonarQubeEnv(credentialsId: '97315392-7119-4668-85aa-f0060271ce52') {
 					
     		// some block
 		}
+*/		
 	 	bat "Quality.bat"  
 /*	  	checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: '', unstableTotalAll: '5' */
         }
