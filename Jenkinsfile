@@ -18,6 +18,8 @@ pipeline {
                 echo 'Descarga del repositorio y hacer clean and package'
 	 	git 'https://github.com/jamaunon/Spring3MVC.git'
 	 	bat "miMaven.bat"
+		echo 'guardando artefactos'
+		archiveArtifacts '**/*.war'
                 }
         }
         stage('Quality') {
