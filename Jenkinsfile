@@ -10,20 +10,20 @@ pipeline {
     }
     stages {
 	stage('Build') {
-/*	    agent {
-                        label "master"
+	    agent {
+                  label "build"
                 }
- */       steps {
+         steps {
                 echo 'Descarga del repositorio y hacer clean and package'
 	 	git 'https://github.com/jamaunon/Spring3MVC.git'
 	 	bat "miMaven.bat"
                 }
         }
         stage('Quality') {
-/*                    agent {
-                        label "win"
+                    agent {
+                        label "quality"
         }
-  */    steps {
+      steps {
                 echo 'Descarga del repositorio y hacer clean and package'
 	 	bat "Quality.bat"
 	  	checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: '', unstableTotalAll: '5'
@@ -32,10 +32,10 @@ pipeline {
         stage('Info-deploy') {
             parallel {
                 stage('Info') {
-/*                   agent {
-                        label "mock"
+                   agent {
+                        label "deploy"
                     }
-*/                    steps {
+                    steps {
 			sleep 10
                     }
                post {
