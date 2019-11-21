@@ -7,6 +7,7 @@ pipeline {
     tools {
         maven 'localmaven' 
         jdk 'LocalJDK8'
+	sonar 'localsonar'
     }
     stages {
 	stage('Build') {
@@ -24,7 +25,7 @@ pipeline {
                         label "quality"
         }
       steps {
-                echo 'Descarga del repositorio y hacer clean and package'
+                echo 'Ejecutando Sonar'
 	 	bat "Quality.bat"
 	  	checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: '', unstableTotalAll: '5'
         }
