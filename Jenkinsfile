@@ -30,7 +30,7 @@ pipeline {
 					
     		// some block
 		}
-*	 	bat "Quality.bat"  
+	 	bat "Quality.bat"  
 /*	  	checkstyle canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: '', unstableTotalAll: '5' */
         }
 	}    
